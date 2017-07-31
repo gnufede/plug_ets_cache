@@ -14,6 +14,10 @@ defmodule PlugEtsCache.Plug do
 
   plug :lookup
 
+  def init(options) do
+    options
+  end
+
   def lookup(conn, _opts) do
     case Store.get(conn) do
       nil    -> conn
